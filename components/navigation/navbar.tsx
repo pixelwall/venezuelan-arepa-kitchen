@@ -6,6 +6,7 @@ import Dropdown from './dropdown'
 import s from './styles/navbar.module.css'
 import nav from '@/lib/navigation'
 import { useGlobalDataContext } from '../page'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [ sidebar, setSidebar ] = useState(false)
@@ -54,14 +55,16 @@ export default function Navbar() {
         <div className="flex overflow-hidden pointer-events-auto">
           <Link href="/">
             <a title="Home" className="overflow-hidden text-2xl font-bold text-blue-800 duration-200 font-title transform hover:scale-95">
-              <img
-                src="/images/logo-alt.png"
-                className="w-auto h-16 duration-200 transform hover:scale-95 logo"
-                alt="logo"
-                width={1570}
-                height={972}
-                loading="lazy"
-              />
+              <div className="duration-200 transform hover:scale-95 logo">
+                <Image
+                  src="/images/logo-alt.png"
+                  alt="Home"
+                  title="Home"
+                  width={113}
+                  height={70}
+                  quality={90}
+                />
+              </div>
             </a>
           </Link>
         </div>
@@ -73,7 +76,7 @@ export default function Navbar() {
               </Fragment>
             ) : (
               <Link href={n.href || '/'} key={i}>
-                <a className="mx-4 font-bold border-transparent border-b-[3px] hover:border-yellow-300 -mb-[3px] duration-200">{n.titulo}</a>
+                <a className="mx-4 font-bold border-transparent border-b-[3px] hover:border-yellow-300 -mt-[3px] duration-200">{n.titulo}</a>
               </Link>
             ))}
           </div>

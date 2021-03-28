@@ -28,7 +28,6 @@
 	border-bottom: 3px solid;
 	@apply border-transparent;
 	@apply duration-200;
-	margin-bottom: -3px;
 }
 
 .dropdown:hover .title span:not(.arrow) {

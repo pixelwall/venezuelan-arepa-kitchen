@@ -7,7 +7,7 @@ const Hero = () => (
   <div className="flex flex-wrap-reverse items-center w-full my-auto sm:flex-wrap">
     <div className="w-full sm:w-1/2">
       <V
-        className="text-5xl font-bold text-transparent xl:text-7xl font-title inline-block bg-clip-text bg-gradient-to-br from-yellow-300 via-blue-300 to-red-500 animate"
+        className="inline-block text-5xl font-bold text-transparent xl:text-7xl font-title bg-clip-text bg-gradient-to-br from-yellow-300 via-blue-300 to-red-500 animate"
         style={setAnim({ x: '-1rem' })}
       >
         Venezuelan
