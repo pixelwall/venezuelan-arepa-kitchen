@@ -18,7 +18,6 @@ const globalDataContext = createContext<any>(null)
 export const useGlobalDataContext = () => useContext(globalDataContext)
 
 const brand = 'Venezuelan Arepa Kitchen'
-const descriptionDefault = ''
 
 const Page = ({ title, brandTitle, description, children, globalData, ...rest }: Props) => {
   const { pathname } = useRouter()
@@ -27,7 +26,7 @@ const Page = ({ title, brandTitle, description, children, globalData, ...rest }:
       <SeoTags
         title={title}
         brandTitle={brandTitle || brand}
-        description={description || descriptionDefault}
+        description={description || (globalData?.SEODescription || brand)}
       />
 
       <OgImage {...rest}/>
