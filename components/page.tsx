@@ -34,7 +34,7 @@ const Page = ({ title, brandTitle, description, children, globalData, ...rest }:
       <div className="flex flex-col w-full min-h-screen">
         <Navbar/>
         <main
-          className="w-full flex-grow overflow-hidden"
+          className="flex-grow w-full overflow-hidden"
           style={{ paddingTop: `${pathname != '/' ? 96 : 0}px` }}
         >
           {children}

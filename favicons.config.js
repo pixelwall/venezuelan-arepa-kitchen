@@ -16,7 +16,7 @@ module.exports = {
   path: '/favicons/',
 
   background: color,
-  theme_color: '#1D1D1D',
+  theme_color: color,
   appleStatusBarStyle: 'default',
 
   scope: '/',
