@@ -1,0 +1,15 @@
+html {
+	background-color: white;
+}
+
+body {
+	@apply p-safe;
+	@apply min-h-screen;
+	@apply antialiased;
+	@apply text-kmb-gray-900;
+
+	/* PWA enhancements */
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+}
