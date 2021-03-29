@@ -14,7 +14,6 @@ const Page404 = (globalData: any) => (
 )
 
 export async function getStaticProps() {
-  // const { lineas, camaras } = await getGlobalData()
   return {
     props: {
     }

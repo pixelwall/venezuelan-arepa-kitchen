@@ -2,12 +2,12 @@ import Page, { PageProps } from '@/components/page'
 import Hero from './hero'
 
 interface IndexProps extends
-PageProps {
+  PageProps {
 }
 
 const Index = (data: IndexProps) => (
   <Page {...data}>
-    <Hero/>
+    <Hero />
     <div className="h-screen"></div>
   </Page>
 )

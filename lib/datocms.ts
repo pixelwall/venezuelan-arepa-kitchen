@@ -41,7 +41,16 @@ export const responsiveImageHelper = ({ w, h, fit }: {
     ${fit ? `fit: ${fit},` : ''}
     auto: format
   }) {
-    ...responsiveImageFragment
+    srcSet
+    webpSrcSet
+    sizes
+    src
+    width
+    height
+    aspectRatio
+    alt
+    title
+    base64
   }`
 }
 
