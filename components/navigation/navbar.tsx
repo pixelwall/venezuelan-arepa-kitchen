@@ -9,7 +9,7 @@ import { useGlobalDataContext } from '../page'
 import Image from 'next/image'
 
 export default function Navbar() {
-  const [ sidebar, setSidebar ] = useState(false)
+  const [sidebar, setSidebar] = useState(false)
   const [scrollY, setScrollY] = useState<number>(null)
   const toggleSidebar = () => (setSidebar(!sidebar))
   const globalData = useGlobalDataContext()
@@ -49,7 +49,7 @@ export default function Navbar() {
   })
 
   return (
-    <header className={`${s.header} duration-500 transform ${!isShowing && '-translate-y-full pointer-events-none'}`}>
+    <header className={`${s.header} duration-500 transform ${(!sidebar && !isShowing) && '-translate-y-full pointer-events-none'}`}>
       <Sidebar open={sidebar} toggle={toggleSidebar}/>
       <div className={`${s.headerWrapper} border-b ${ scrollY > 0 ? 'border-kmb-gray-100' : 'border-transparent' }`}>
         <div className="flex overflow-hidden pointer-events-auto">

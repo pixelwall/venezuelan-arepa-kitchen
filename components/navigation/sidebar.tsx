@@ -128,6 +128,7 @@ const Sidebar = ({ open = false, toggle }: SidebarProps) => {
 
   useEffect(() => {
     document.documentElement.classList.toggle('overflow-hidden', open)
+    document.documentElement.classList.toggle('lg:overflow-auto', open)
   }, [open])
 
   useEffect(() => {
