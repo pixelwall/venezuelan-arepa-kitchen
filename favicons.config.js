@@ -6,9 +6,9 @@ const iconsProps = {
 }
 
 module.exports = {
-  appName: 'Venezuelan Arepa Kitchen',
-  appShortName: 'Venezuelan Arepa Kitchen',
-  appDescription: 'Venezuelan Arepa Kitchen Web App',
+  appName: 'Arepa Venezuelan Kitchen',
+  appShortName: 'Arepa Venezuelan Kitchen',
+  appDescription: 'Arepa Venezuelan Kitchen Web App',
 
   developerName: '',
   developerURL: '',
