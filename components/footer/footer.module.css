@@ -7,14 +7,18 @@
 
 .madeBy :global(p) {
 	width: 100%;
-	@apply pb-6;
 	@apply text-sm;
 }
 
 @screen md {
 	.madeBy :global(p) {
 		width: auto;
-		@apply pb-0;
+	}
+}
+
+@screen lg {
+	.el .paragraph {
+		width: 32ch;
 	}
 }
 
@@ -27,6 +31,7 @@
 
 @screen lg {
 	.elements {
+		@apply mx-[-16px];
 		flex-direction: row;
 	}
 }
@@ -38,6 +43,9 @@
 }
 
 @screen lg {
+	.el {
+		@apply px-[16px];
+	}
 	.el:last-of-type {
 		text-align: right;
 	}
@@ -47,20 +55,21 @@
 	}
 }
 
-.el :global(p) {
+.el .title {
+	color: black;
 	@apply text-xl;
 	@apply font-title;
 	@apply font-bold;
 }
 
-.el :global(div) {
+.el .links {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	@apply mt-2;
 }
 
-.el :global(a) {
+.el .links :global(a) {
 	@apply my-1;
 }
 
