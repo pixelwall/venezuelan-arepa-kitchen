@@ -90,7 +90,7 @@ export default function Navbar() {
             </div>
             <Link href="/menu">
               <a
-                className="bg-transparent rounded-full font-bold font-title border-kmb-gray-800 border-2 text-transparent text-sm mb-[2px] py-2 px-4 text-kmb-gray-800 duration-200 lg:text-base hover:bg-kmb-gray-800 hover:text-white"
+                className="bg-transparent rounded-full font-bold font-title border-kmb-gray-800 border-2 text-sm mb-[2px] py-2 px-4 text-kmb-gray-800 duration-200 lg:text-base hover:bg-kmb-gray-800 hover:text-white"
               >Order now</a>
             </Link>
             <button className="ml-6 text-kmb-gray-300 duration-200 hidden items-center sm:flex hover:text-kmb-gray-800">

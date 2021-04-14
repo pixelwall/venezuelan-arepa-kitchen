@@ -31,7 +31,11 @@ const Page = ({ title, brandTitle, description, children, globalData, ...rest }:
 
       <OgImage {...rest}/>
 
-      <div className="flex flex-col w-full min-h-screen">
+      <style global jsx>
+        {` html { scroll-behavior: smooth; }`}
+      </style>
+
+      <div className="flex flex-col min-h-screen w-full">
         <Navbar/>
         <main
           className="flex-grow w-full overflow-hidden"
