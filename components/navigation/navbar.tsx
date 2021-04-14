@@ -6,6 +6,7 @@ import Dropdown from './dropdown'
 import s from './styles/navbar.module.css'
 import nav from '@/lib/navigation'
 import { useGlobalDataContext } from '../page'
+import { ShoppingCart24 } from '@carbon/icons-react'
 import Image from 'next/image'
 
 export default function Navbar() {
@@ -49,47 +50,59 @@ export default function Navbar() {
   })
 
   return (
-    <header className={`${s.header} duration-500 transform-gpu ${(!sidebar && !isShowing) && '-translate-y-full pointer-events-none'}`}>
-      <Sidebar open={sidebar} toggle={toggleSidebar} />
-      <div className={`${s.headerWrapper} border-b ${scrollY > 0 ? 'border-kmb-gray-100' : 'border-transparent'}`}>
-        <div className="flex overflow-hidden pointer-events-auto">
-          <Link href="/">
-            <a title="Home" className="font-bold font-title transform text-2xl text-blue-800 duration-200 overflow-hidden hover:scale-95">
-              <div className="transform duration-200 logo hover:scale-95">
-                <Image
-                  src="/images/logo-alt.png"
-                  alt="Home"
-                  title="Home"
-                  width={113}
-                  height={70}
-                  quality={90}
-                />
-              </div>
-            </a>
-          </Link>
-        </div>
-        <div className={s.elements}>
-          <div className="mr-2 transition-all duration-200 items-center hidden lg:flex">
-            {nav(globalData).map((n, i) => n.childrens ? (
-              <Fragment key={i}>
-                <Dropdown titulo={n.titulo} links={n.childrens} />
-              </Fragment>
-            ) : (
-              <Link href={n.href || '/'} key={i}>
-                <a className="border-transparent font-bold border-b-[3px] mx-4 -mt-[3px] duration-200 hover:border-yellow-300">{n.titulo}</a>
-              </Link>
-            ))}            
-          </div>
-          <Link href="/menu">
-            <a
-              className="bg-transparent rounded-full font-bold font-title border-kmb-gray-800 border-2 text-transparent text-sm mb-[2px] py-2 px-4 text-kmb-gray-800 duration-200 lg:text-base hover:bg-kmb-gray-800 hover:text-white"
-            >Order now</a>
-          </Link>
-          <div className="ml-6 lg:hidden">
-            <Hamburger open={sidebar} toggle={toggleSidebar} />
-          </div>
-        </div>
+    <>
+      <div className={`bg-white border-t border-l duration-500 rounded-tl-lg border-kmb-gray-200 p-4 transform-gpu right-0 bottom-0 z-10 fixed sm:hidden ${(!sidebar && !isShowing) && 'translate-y-full pointer-events-none'}`}>
+        <button className="flex text-kmb-gray-300 duration-200 items-center hover:text-kmb-gray-800">
+          <ShoppingCart24 />
+          <span className="font-bold font-title text-sm ml-2 text-kmb-gray-800">0</span>
+        </button>
       </div>
-    </header>
+      <header className={`${s.header} duration-500 transform-gpu ${(!sidebar && !isShowing) && '-translate-y-full pointer-events-none'}`}>
+        <Sidebar open={sidebar} toggle={toggleSidebar} />
+        <div className={`${s.headerWrapper} border-b ${scrollY > 0 ? 'border-kmb-gray-100' : 'border-transparent'}`}>
+          <div className="flex overflow-hidden pointer-events-auto">
+            <Link href="/">
+              <a title="Home" className="font-bold font-title transform text-2xl text-blue-800 duration-200 overflow-hidden hover:scale-95">
+                <div className="transform duration-200 logo hover:scale-95">
+                  <Image
+                    src="/images/logo-alt.png"
+                    alt="Home"
+                    title="Home"
+                    width={113}
+                    height={70}
+                    quality={90}
+                  />
+                </div>
+              </a>
+            </Link>
+          </div>
+          <div className={s.elements}>
+            <div className="mr-2 transition-all duration-200 items-center hidden lg:flex">
+              {nav(globalData).map((n, i) => n.childrens ? (
+                <Fragment key={i}>
+                  <Dropdown titulo={n.titulo} links={n.childrens} />
+                </Fragment>
+              ) : (
+                <Link href={n.href || '/'} key={i}>
+                  <a className="border-transparent font-bold border-b-[3px] mx-4 -mt-[3px] duration-200 hover:border-yellow-300">{n.titulo}</a>
+                </Link>
+              ))}            
+            </div>
+            <Link href="/menu">
+              <a
+                className="bg-transparent rounded-full font-bold font-title border-kmb-gray-800 border-2 text-transparent text-sm mb-[2px] py-2 px-4 text-kmb-gray-800 duration-200 lg:text-base hover:bg-kmb-gray-800 hover:text-white"
+              >Order now</a>
+            </Link>
+            <button className="ml-6 text-kmb-gray-300 duration-200 hidden items-center sm:flex hover:text-kmb-gray-800">
+              <ShoppingCart24 />
+              <span className="font-bold font-title text-sm ml-2 text-kmb-gray-800">0</span>
+            </button>
+            <div className="ml-6 lg:hidden">
+              <Hamburger open={sidebar} toggle={toggleSidebar} />
+            </div>
+          </div>
+        </div>
+      </header>
+    </>
   )
 }

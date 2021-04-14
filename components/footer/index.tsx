@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import navs from '@/lib/navigation'
 import styles from './footer.module.css'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import {useGlobalDataContext} from '../page'
 import Viewport, {setAnim} from '../viewport'
 import Image from 'next/image'
@@ -10,7 +10,7 @@ import { LogoInstagram32 } from '@carbon/icons-react'
 
 const MadeBy = () => (
   <div className={styles['madeBy']}>
-    <p>Developed with ❤️ by <strong>Pixelwall Marketing</strong></p>
+    <p>Developed in 🇻🇪 🇺🇸 with ❤️ by <strong>Pixelwall Marketing</strong></p>
   </div>
 )
 
@@ -44,6 +44,43 @@ const Marketing = () => (
         >
           <LogoInstagram32 />
         </a>
+      </div>
+    </div>
+  </div>
+)
+
+const IsOpen = () => {
+  const schedule = {
+    init: 1,
+    to: 5,
+
+  }
+  const [isOpen, setStatus] = useState(true)
+  return (
+    <span className={`rounded ${isOpen ? 'bg-green-500' : 'bg-red-500'} mx-1 text-sm text-white p-1`}>
+      {isOpen ? 'Open' : 'Closed'}
+    </span>
+  )
+}
+
+const Information = () => (
+  <div className="flex flex-col">
+    <div className={styles['el-alt']}>
+      <p className={styles['title']}>Location</p>
+      <p className={styles['paragraph']}>
+        Guiri Guire, Juan Griego, junto a la casa de Yeya.
+      </p>
+    </div>
+    <div className={styles['el-alt']}>
+      <p className={styles['title']}>Schedule</p>
+      <p className={styles['paragraph']}>
+        24/7 <IsOpen/>
+      </p>
+    </div>
+    <div className={styles['el-alt']}>
+      <p className={styles['title']}>Phone</p>
+      <div className={styles['links']}>
+        <a href="tel:+12345678">+12345678</a>
       </div>
     </div>
   </div>
@@ -90,6 +127,7 @@ const Childrens = () => {
 const Elements = () => (
   <div className={styles['elements']}>
     <Marketing/>
+    <Information/>
     <Isolated/>
     <Childrens/>
   </div>
