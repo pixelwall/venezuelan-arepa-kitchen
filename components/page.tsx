@@ -5,6 +5,7 @@ import { createContext } from 'react'
 import OgImage, { OgImageProps } from './og-image'
 import SeoTags, { SeoTagsProps } from './seo-tags'
 import { useRouter } from 'next/router'
+import Snipcart from './snipcart'
 
 export interface PageProps {
   globalData?: any

@@ -16,8 +16,6 @@ const MadeBy = () => (
 
 const Marketing = () => {
   const { globalInfo, contactInfo } = useGlobalDataContext()
-  const { footerDescription } = globalInfo
-  const { facebook, instagram } = contactInfo
 
   return (
     <div className={styles['el']}>
@@ -32,20 +30,20 @@ const Marketing = () => {
       <div className="mt-6">
         <div
           className={styles['paragraph']}
-          dangerouslySetInnerHTML={{ __html: footerDescription }}
+          dangerouslySetInnerHTML={{ __html: globalInfo?.footerDescription }}
          />
       </div>
       <div className="flex mt-6 items-center">
         <p className={styles['title']}>Follow us</p>
         <div className="flex -mx-2 pl-4 text-kmb-gray-300 items-center">
           <a
-            href={facebook}
+            href={contactInfo?.facebook}
             className="px-2 duration-200 hover:text-black"
           >
             <LogoFacebook32 />
           </a>
           <a
-            href={instagram}
+            href={contactInfo?.instagram}
             className="px-2 duration-200 hover:text-black"
           >
             <LogoInstagram32 />
@@ -64,16 +62,19 @@ const IsOpen = () => {
   }
   const [isOpen, setStatus] = useState(true)
   return (
-    <span className={`rounded ${isOpen ? 'bg-green-500' : 'bg-red-500'} mx-1 text-sm text-white p-1`}>
-      {isOpen ? 'Open' : 'Closed'}
-    </span>
+    <div className="rounded border-2 py-1 px-2 inline-flex items-center content-start">
+      <div className={`rounded-[50%] w-[8px] h-[8px] ${isOpen ? 'bg-green-500' : 'bg-red-500'}`} />
+      <div className={`rounded ml-1 inline text-xs font-bold`}>
+        {isOpen ? 'Open' : 'Closed'}
+      </div>
+    </div>
   )
 }
 
 const Information = () => {
   const { globalInfo, contactInfo } = useGlobalDataContext()
-  const { direction } = globalInfo
-  const { phone } = contactInfo
+  const direction = globalInfo?.direction
+  const phone = contactInfo?.phone
 
   return (
     <div className="flex flex-col">
@@ -86,8 +87,11 @@ const Information = () => {
       <div className={styles['el-alt']}>
         <p className={styles['title']}>Schedule</p>
         <p className={styles['paragraph']}>
-          24/7 <IsOpen />
+          24/7
         </p>
+        <div className="mt-2">
+          <IsOpen />
+        </div>
       </div>
       <div className={styles['el-alt']}>
         <p className={styles['title']}>Phone</p>
@@ -119,9 +123,11 @@ const Isolated = () => {
   const data = useGlobalDataContext()
   const isolated = navs(data).filter(e => !e.childrens)
   return (
-    <>{isolated.length > 0 ? (
-      <Section titulo="Menu" childrens={isolated as any[]}/>
-    ) : null}</>
+    <>
+      {isolated.length > 0 ? (
+        <Section titulo="Menu" childrens={isolated as any[]} />
+      ) : null}
+    </>
   )
 }
 
