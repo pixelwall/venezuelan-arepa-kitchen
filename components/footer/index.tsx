@@ -14,40 +14,47 @@ const MadeBy = () => (
   </div>
 )
 
-const Marketing = () => (
-  <div className={styles['el']}>
-    <Image
-      src="/images/logo-black.png"
-      alt="Home"
-      title="Home"
-      width={128}
-      height={128}
-      layout="fixed"
-    />
-    <div className="mt-6">
-      <p className={styles['paragraph']}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-    </div>
-    <div className="flex mt-6 items-center">
-      <p className={styles['title']}>Follow us</p>
-      <div className="flex -mx-2 pl-4 text-kmb-gray-300 items-center">
-        <a
-          href="#"
-          className="px-2 duration-200 hover:text-black"
-        >
-          <LogoFacebook32 />
-        </a>
-        <a
-          href="#"
-          className="px-2 duration-200 hover:text-black"
-        >
-          <LogoInstagram32 />
-        </a>
+const Marketing = () => {
+  const { globalInfo, contactInfo } = useGlobalDataContext()
+  const { footerDescription } = globalInfo
+  const { facebook, instagram } = contactInfo
+
+  return (
+    <div className={styles['el']}>
+      <Image
+        src="/images/logo-black.png"
+        alt="Home"
+        title="Home"
+        width={128}
+        height={128}
+        layout="fixed"
+      />
+      <div className="mt-6">
+        <div
+          className={styles['paragraph']}
+          dangerouslySetInnerHTML={{ __html: footerDescription }}
+         />
+      </div>
+      <div className="flex mt-6 items-center">
+        <p className={styles['title']}>Follow us</p>
+        <div className="flex -mx-2 pl-4 text-kmb-gray-300 items-center">
+          <a
+            href={facebook}
+            className="px-2 duration-200 hover:text-black"
+          >
+            <LogoFacebook32 />
+          </a>
+          <a
+            href={instagram}
+            className="px-2 duration-200 hover:text-black"
+          >
+            <LogoInstagram32 />
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-)
+  )
+}
 
 const IsOpen = () => {
   const schedule = {
@@ -63,28 +70,34 @@ const IsOpen = () => {
   )
 }
 
-const Information = () => (
-  <div className="flex flex-col">
-    <div className={styles['el-alt']}>
-      <p className={styles['title']}>Location</p>
-      <p className={styles['paragraph']}>
-        Guiri Guire, Juan Griego, junto a la casa de Yeya.
-      </p>
-    </div>
-    <div className={styles['el-alt']}>
-      <p className={styles['title']}>Schedule</p>
-      <p className={styles['paragraph']}>
-        24/7 <IsOpen/>
-      </p>
-    </div>
-    <div className={styles['el-alt']}>
-      <p className={styles['title']}>Phone</p>
-      <div className={styles['links']}>
-        <a href="tel:+12345678">+12345678</a>
+const Information = () => {
+  const { globalInfo, contactInfo } = useGlobalDataContext()
+  const { direction } = globalInfo
+  const { phone } = contactInfo
+
+  return (
+    <div className="flex flex-col">
+      <div className={styles['el-alt']}>
+        <p className={styles['title']}>Location</p>
+        <p className={styles['paragraph']}>
+          {direction}
+        </p>
+      </div>
+      <div className={styles['el-alt']}>
+        <p className={styles['title']}>Schedule</p>
+        <p className={styles['paragraph']}>
+          24/7 <IsOpen />
+        </p>
+      </div>
+      <div className={styles['el-alt']}>
+        <p className={styles['title']}>Phone</p>
+        <div className={styles['links']}>
+          <a href={`tel:${phone}`}>{phone}</a>
+        </div>
       </div>
     </div>
-  </div>
-)
+  )
+}
 
 const Section = ({ titulo, childrens }: {
   titulo: string,

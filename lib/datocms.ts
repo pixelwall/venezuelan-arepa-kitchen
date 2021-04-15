@@ -20,6 +20,15 @@ export function request({ query, variables, preview }: {
 
 const GLOBAL_DATA_QUERY = `
 query GlobalDataQuery {
+  globalInfo {
+    footerDescription
+    direction
+  }
+  contactInfo {
+    facebook
+    instagram
+    phone
+  }
 }
 `
 

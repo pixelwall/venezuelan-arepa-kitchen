@@ -1,9 +1,10 @@
+import { getGlobalData } from '@/lib/datocms'
 import Page from '@/components/page'
 
 const Page404 = (globalData: any) => (
   <Page title="404: This page could not be found" globalData={globalData}>
-    <div className="w-full py-16 text-center">
-      <h1 className="mb-4 font-bold text-8xl font-title">
+    <div className="text-center w-full py-16">
+      <h1 className="font-bold font-title mb-4 text-8xl">
         <span className="text-yellow-300">4</span>
         <span className="text-blue-300">0</span>
         <span className="text-red-300">4</span>
@@ -14,8 +15,10 @@ const Page404 = (globalData: any) => (
 )
 
 export async function getStaticProps() {
+  const globalData = await getGlobalData()
   return {
     props: {
+      globalData
     }
   }
 }
