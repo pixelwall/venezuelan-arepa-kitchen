@@ -4,6 +4,9 @@ const { PHASE_PRODUCTION_BUILD, PHASE_PRODUCTION_SERVER } = require('next/consta
 
 const nextConfig = {
   reactStrictMode: true,
+  future: {
+    webpack5: true,
+  },
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
