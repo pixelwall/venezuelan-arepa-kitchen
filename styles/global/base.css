@@ -6,7 +6,7 @@ body {
 	@apply p-safe;
 	@apply min-h-screen;
 	@apply antialiased;
-	@apply text-kmb-gray-900;
+	@apply text-x-gray-900;
 
 	/* PWA enhancements */
 	-webkit-overflow-scrolling: touch;

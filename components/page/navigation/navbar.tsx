@@ -5,7 +5,7 @@ import Sidebar from './sidebar'
 import Dropdown from './dropdown'
 import s from './styles/navbar.module.css'
 import nav from '@/lib/navigation'
-import { useGlobalDataContext } from '../page'
+import { useGlobalDataContext } from '@/components/page'
 import { ShoppingCart24 } from '@carbon/icons-react'
 import Image from 'next/image'
 
