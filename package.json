@@ -29,6 +29,7 @@
     "sharp": "^0.27.2",
     "sitemap": "^6.4.0",
     "tailwindcss-safe-area": "^0.2.1",
+    "terser-webpack-plugin": "4.2.3",
     "url": "^0.11.0"
   },
   "devDependencies": {
