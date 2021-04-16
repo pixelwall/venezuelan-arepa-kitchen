@@ -7,6 +7,7 @@ export const SnipcartHead = () => (
   <Head>
     <link rel="preconnect" href="https://app.snipcart.com" />
     <link rel="preconnect" href="https://cdn.snipcart.com" />
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.1.0/default/snipcart.css" />
     <script
       dangerouslySetInnerHTML={{
         __html: `

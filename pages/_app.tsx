@@ -1,6 +1,5 @@
 import '@/styles/app.css'
 import '@/styles/icons.css'
-import '@/styles/snipcart.css'
 import Snipcart from '@/components/snipcart'
 
 import type { AppProps } from 'next/app'
