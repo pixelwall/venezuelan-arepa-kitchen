@@ -22,7 +22,7 @@ specifiers:
   gulp: ^4.0.2
   next: 10.0.5
   next-compose-plugins: ^2.2.1
-  next-pwa: ^5.0.6
+  next-pwa: ^5.2.1
   next-themes: ^0.0.10
   postcss: ^8.2.8
   postcss-import: ^14.0.0
@@ -49,7 +49,7 @@ dependencies:
   graphql: 15.5.0
   graphql-request: 3.4.0_graphql@15.5.0
   next: 10.0.5_5347ba9dae72bc17e95cc7756ff465f1
-  next-pwa: 5.0.6_next@10.0.5
+  next-pwa: 5.2.9_next@10.0.5
   next-themes: 0.0.10_27fda0060d237a6cfdb35db406171e5f
   preact: 10.5.13
   preact-compat: 3.19.0_preact@10.5.13
@@ -1730,7 +1730,7 @@ packages:
     dependencies:
       '@types/estree': 0.0.39
       estree-walker: 1.0.1
-      picomatch: 2.2.2
+      picomatch: 2.2.3
       rollup: 2.43.0
     dev: false
 
@@ -6971,22 +6971,23 @@ packages:
     resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
     dev: true
 
-  /next-pwa/5.0.6_next@10.0.5:
-    resolution: {integrity: sha512-3IgjJr4iD0Fis1cplsY8nZo5BgHIdhJ9I5YpRU/3VBOpGQEkzb+B/+M0eNVjjebv9+WoqnvMkSjNDOs4KT7bBA==}
+  /next-pwa/5.2.9_next@10.0.5:
+    resolution: {integrity: sha512-RrZOOnfzC4pl0oWQPT+lm+oUEz9dqMd5tHemmcPf0ty9r3Um6xiietUhu7zEWPScLaUr6Mhmh7MLWqKgvdxnkw==}
     peerDependencies:
       next: '>=7.0.0'
-      webpack: '>=4.0.0 <5.0.0'
     dependencies:
       babel-loader: 8.2.2
       clean-webpack-plugin: 3.0.0
       globby: 11.0.3
       next: 10.0.5_5347ba9dae72bc17e95cc7756ff465f1
+      terser-webpack-plugin: 5.1.1
       workbox-webpack-plugin: 6.1.2
       workbox-window: 6.1.2
     transitivePeerDependencies:
       - '@babel/core'
       - '@types/babel__core'
       - supports-color
+      - webpack
     dev: false
 
   /next-themes/0.0.10_27fda0060d237a6cfdb35db406171e5f:
@@ -7689,6 +7690,7 @@ packages:
   /picomatch/2.2.2:
     resolution: {integrity: sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==}
     engines: {node: '>=8.6'}
+    dev: true
 
   /picomatch/2.2.3:
     resolution: {integrity: sha512-KpELjfwcCDUb9PeigTs2mBJzXUPzAuP2oPcA989He8Rte0+YUAjw1JVedDhuTKPkHjSYzMN3npC9luThGYEKdg==}
@@ -8821,6 +8823,12 @@ packages:
       randombytes: 2.1.0
     dev: false
 
+  /serialize-javascript/5.0.1:
+    resolution: {integrity: sha512-SaaNal9imEO737H2c05Og0/8LUXG7EnsZyMa8MzkmuHoELfT6txuj0cMqRj6zfPKnmQ1yasR4PCJc8x+M4JSPA==}
+    dependencies:
+      randombytes: 2.1.0
+    dev: false
+
   /set-blocking/2.0.0:
     resolution: {integrity: sha1-BF+XgtARrppoA93TgrJDkrPYkPc=}
 
@@ -9525,6 +9533,20 @@ packages:
       webpack: 4.44.1
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
+    dev: false
+
+  /terser-webpack-plugin/5.1.1:
+    resolution: {integrity: sha512-5XNNXZiR8YO6X6KhSGXfY0QrGrCRlSwAEjIIrlRQR4W8nP69TaJUlh3bkuac6zzgspiGPfKEHcY295MMVExl5Q==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^5.1.0
+    dependencies:
+      jest-worker: 26.6.2
+      p-limit: 3.1.0
+      schema-utils: 3.0.0
+      serialize-javascript: 5.0.1
+      source-map: 0.6.1
+      terser: 5.6.1
     dev: false
 
   /terser/4.8.0:
