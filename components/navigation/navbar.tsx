@@ -52,17 +52,17 @@ export default function Navbar() {
   return (
     <>
       <div className={`bg-white border-t border-l duration-500 rounded-tl-lg border-kmb-gray-200 p-4 transform-gpu right-0 bottom-0 z-10 fixed sm:hidden ${(!sidebar && !isShowing) && 'translate-y-full pointer-events-none'}`}>
-        <button className="flex items-center text-kmb-gray-300 duration-200 snipcart-checkout hover:text-kmb-gray-800">
+        <button className="flex text-kmb-gray-300 duration-200 items-center snipcart-checkout hover:text-kmb-gray-800">
           <ShoppingCart24 />
-          <span className="ml-2 text-sm font-bold font-title text-kmb-gray-800 snipcart-items-count"/>
+          <span className="font-bold font-title text-sm ml-2 text-kmb-gray-800 snipcart-items-count"/>
         </button>
       </div>
       <header className={`${s.header} duration-500 transform-gpu ${(!sidebar && !isShowing) && '-translate-y-full pointer-events-none'}`}>
         <Sidebar open={sidebar} toggle={toggleSidebar} />
-        <div className={`${s.headerWrapper} border-b ${scrollY > 0 ? 'border-kmb-gray-100' : 'border-transparent'}`}>
+        <div className={`${s.headerWrapper} border-b duration-200 ${scrollY > 0 ? 'border-kmb-gray-200' : 'border-transparent'}`}>
           <div className="flex overflow-hidden pointer-events-auto">
             <Link href="/">
-              <a title="Home" className="overflow-hidden text-2xl font-bold text-blue-800 font-title transform duration-200 hover:scale-95">
+              <a title="Home" className="font-bold font-title transform text-2xl text-blue-800 duration-200 overflow-hidden hover:scale-95">
                 <div className="transform duration-200 logo hover:scale-95">
                   <Image
                     src="/images/logo-alt.png"
@@ -77,7 +77,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div className={s.elements}>
-            <div className="items-center hidden mr-2 transition-all duration-200 lg:flex">
+            <div className="mr-2 transition-all duration-200 items-center hidden lg:flex">
               {nav(globalData).map((n, i) => n.childrens ? (
                 <Fragment key={i}>
                   <Dropdown titulo={n.titulo} links={n.childrens} />
@@ -94,10 +94,10 @@ export default function Navbar() {
               >Order now</a>
             </Link>
             <button
-              className="items-center hidden ml-6 text-kmb-gray-300 duration-200 snipcart-checkout sm:flex hover:text-kmb-gray-800"
+              className="ml-6 text-kmb-gray-300 duration-200 items-center hidden snipcart-checkout sm:flex hover:text-kmb-gray-800"
             >
               <ShoppingCart24 />
-              <span className="ml-2 text-sm font-bold font-title text-kmb-gray-800 snipcart-items-count" />
+              <span className="font-bold font-title text-sm ml-2 text-kmb-gray-800 snipcart-items-count" />
             </button>
             <div className="ml-6 lg:hidden">
               <Hamburger open={sidebar} toggle={toggleSidebar} />
