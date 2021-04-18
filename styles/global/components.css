@@ -1,4 +1,6 @@
-.content, .content-lg {
+@tailwind components;
+
+.c, .c-lg {
 	@apply px-6;
 	width: 100%;
 	margin-left: auto;
@@ -6,10 +8,10 @@
 }
 
 @screen lg {
-	.content {
+	.c {
 		width: 80%;
 	}
-	.content-lg {
+	.c-lg {
 		width: 90%;
 	}
 }

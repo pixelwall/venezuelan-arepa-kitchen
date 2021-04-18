@@ -153,7 +153,7 @@ const Elements = () => (
 )
 
 const Footer = () => (
-  <footer className="p pb-6 text-x-gray-500 content-lg t-16 lg:pb-12">
+  <footer className="p pb-6 text-x-gray-500 c-lg t-16 lg:pb-12">
     <Viewport className="animate" oneWay style={setAnim({y: '0.5rem'})}>
       <Elements/>
       <MadeBy/>
