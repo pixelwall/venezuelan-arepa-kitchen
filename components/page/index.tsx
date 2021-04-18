@@ -1,11 +1,11 @@
 import { ReactNode, useContext } from 'react'
-import Navbar from './navigation/navbar'
-import Footer from './footer'
+import { Navbar, Footer } from './navigation'
 import { createContext } from 'react'
 import OgImage, { OgImageProps } from './og-image'
 import SeoTags, { SeoTagsProps } from './seo-tags'
 import { useRouter } from 'next/router'
-import Snipcart from './snipcart'
+import { GoogleFonts } from '@/components/google-fonts'
+import Favicons from './favicons'
 
 export interface PageProps {
   globalData?: any
@@ -20,10 +20,27 @@ export const useGlobalDataContext = () => useContext(globalDataContext)
 
 const brand = 'Arepa Venezuelan Kitchen'
 
-const Page = ({ title, brandTitle, description, children, globalData, ...rest }: Props) => {
+const Page = ({
+  title,
+  brandTitle,
+  description,
+  children,
+  globalData,
+  ...rest
+}: PageProps & OgImageProps & SeoTagsProps & PageProps & {
+  children?: ReactNode
+}) => {
   const { pathname } = useRouter()
   return (
     <globalDataContext.Provider value={globalData}>
+      <GoogleFonts
+        families={[
+          'Titillium+Web:wght@300;400;700',
+          'Lato:wght@300;400;700;900',
+        ]}
+        display="swap"
+      />
+
       <SeoTags
         title={title}
         brandTitle={brandTitle || brand}
@@ -31,6 +48,8 @@ const Page = ({ title, brandTitle, description, children, globalData, ...rest }:
       />
 
       <OgImage {...rest}/>
+
+      <Favicons/>
 
       <style global jsx>
         {` html { scroll-behavior: smooth; }`}

@@ -1,4 +1,6 @@
-.content, .content-lg {
+@tailwind components;
+
+.c, .c-lg {
 	@apply px-6;
 	width: 100%;
 	margin-left: auto;
@@ -6,117 +8,25 @@
 }
 
 @screen lg {
-	.content {
+	.c {
 		width: 80%;
 	}
-	.content-lg {
+	.c-lg {
 		width: 90%;
 	}
-}
-
-.btn-secondary-gray {
-	@apply px-3;
-	@apply py-2;
-	@apply rounded-lg;
-	@apply text-kmb-gray-700;
-	@apply transform;
-	@apply duration-200;
-	border-color: transparent;
-	border-width: 2px;
-}
-
-.btn-secondary-gray:hover {
-	@apply -translate-y-px;
-	@apply shadow;
-	@apply border-kmb-gray-700;
-}
-
-.dark .btn-secondary-gray {
-	@apply text-kmb-gray-200;
-}
-
-.dark .btn-secondary-gray:hover {
-	@apply text-kmb-gray-700;
-	border-color: transparent;
-	border-width: 2px;
-}
-
-.btn-primary-gray {
-	@apply px-3;
-	@apply py-2;
-	@apply rounded-lg;
-	@apply text-white;
-	@apply transform;
-	@apply duration-200;
-	@apply bg-kmb-gray-700;
-	@apply border-kmb-gray-700;
-	border-width: 2px;
-}
-
-.btn-secondary {
-	@apply px-3;
-	@apply py-2;
-	@apply rounded-lg;
-	@apply text-kmb-blue-500;
-	@apply transform;
-	@apply duration-200;
-	border-color: transparent;
-	border-width: 2px;
-}
-
-.btn-secondary:hover {
-	@apply -translate-y-px;
-	@apply shadow;
-	@apply border-kmb-blue-500;
-}
-
-.btn-fill {
-	@apply px-3;
-	@apply py-2;
-	@apply rounded-lg;
-	@apply text-kmb-blue-500;
-	@apply transform;
-	@apply duration-200;
-	border-color: transparent;
-	border-width: 2px;
-	@apply border-kmb-blue-500;
-}
-
-.btn-fill:hover {
-	@apply -translate-y-px;
-	@apply shadow;
-	@apply text-white;
-	@apply bg-kmb-blue-500;
-}
-
-.btn-primary {
-	@apply px-3;
-	@apply py-2;
-	@apply rounded-lg;
-	@apply text-white;
-	@apply transform;
-	@apply duration-200;
-	@apply bg-kmb-blue-500;
-	@apply border-kmb-blue-500;
-	border-width: 2px;
-}
-
-.btn-primary:hover, .btn-primary-gray:hover {
-	@apply -translate-y-px;
-	@apply shadow;
 }
 
 .input {
 	@apply p-2;
 	@apply border-b;
-	@apply border-gray-400;
+	@apply border-x-gray-300;
 	@apply bg-transparent;
 }
 
 .input:focus {
 	outline: none;
-	@apply border-white;
-	@apply text-white;
+	@apply border-black;
+	@apply text-black;
 }
 
 .t-p {

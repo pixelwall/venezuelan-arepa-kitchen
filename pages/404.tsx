@@ -3,8 +3,8 @@ import Page, { PageProps } from '@/components/page'
 
 const Page404 = (props: PageProps) => (
   <Page {...props} title="404: This page could not be found">
-    <div className="w-full py-16 text-center">
-      <h1 className="mb-4 font-bold font-title text-8xl">
+<div className="text-center w-full py-16">
+      <h1 className="font-bold font-title mb-4 text-8xl">
         <span className="text-yellow-300">4</span>
         <span className="text-blue-300">0</span>
         <span className="text-red-300">4</span>

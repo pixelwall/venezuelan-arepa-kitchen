@@ -30,5 +30,5 @@
 	@apply pointer-events-auto;
 	@apply text-base;
 	@apply font-title;
-	@apply text-kmb-gray-800;
+	@apply text-x-gray-800;
 }

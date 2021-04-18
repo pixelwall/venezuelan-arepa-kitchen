@@ -24,7 +24,7 @@ const fontFamily = {
 }
 
 const colors = {
-  'kmb-blue': {
+  'x-blue': {
     50: '#F2F8FE',
     100: '#E6F1FC',
     200: '#C0DCF8',
@@ -36,7 +36,7 @@ const colors = {
     800: '#013466',
     900: '#012344',
   },
-  'kmb-gray': {
+  'x-gray': {
     50: '#F7F7F7',
     100: '#EFEFEF',
     200: '#D7D7D7',

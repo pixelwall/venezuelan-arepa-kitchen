@@ -2,8 +2,8 @@ import Link from 'next/link'
 import navs from '@/lib/navigation'
 import styles from './footer.module.css'
 import { Fragment, useState } from 'react'
-import {useGlobalDataContext} from '../page'
-import Viewport, {setAnim} from '../viewport'
+import { useGlobalDataContext } from '@/components/page'
+import Viewport, { setAnim } from '@/components/viewport'
 import Image from 'next/image'
 import { LogoFacebook32 } from '@carbon/icons-react'
 import { LogoInstagram32 } from '@carbon/icons-react'
@@ -35,7 +35,7 @@ const Marketing = () => {
       </div>
       <div className="flex mt-6 items-center">
         <p className={styles['title']}>Follow us</p>
-        <div className="flex -mx-2 pl-4 text-kmb-gray-300 items-center">
+        <div className="flex -mx-2 pl-4 text-x-gray-300 items-center">
           <a
             href={contactInfo?.facebook}
             className="px-2 duration-200 hover:text-black"
@@ -153,7 +153,7 @@ const Elements = () => (
 )
 
 const Footer = () => (
-  <footer className="p pb-6 text-kmb-gray-500 content-lg t-16 lg:pb-12">
+  <footer className="p pb-6 text-x-gray-500 c-lg t-16 lg:pb-12">
     <Viewport className="animate" oneWay style={setAnim({y: '0.5rem'})}>
       <Elements/>
       <MadeBy/>

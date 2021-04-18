@@ -3,7 +3,7 @@ import { useRef, useEffect } from 'react'
 import links from '@/lib/navigation'
 import Link from 'next/link'
 import s from './styles/sidebar.module.css'
-import {useGlobalDataContext} from '../page'
+import { useGlobalDataContext } from '@/components/page'
 
 interface ChildrenMenu {
   title?: string
@@ -23,7 +23,7 @@ const ParentLink = (link: {
   toggle?: () => void
 }) => {
   const { idx, title, href, childrens, toggle } = link
-  const css: CSSProperties = { animationDelay: `${(( idx - 1 ) * 200) - 300}ms`, paddingRight: '0.5rem' }
+  const css: CSSProperties = { animationDelay: `${(( idx - 1 ) * 200) - 300}ms` as string, paddingRight: '0.5rem' }
   const [, setChildMenu] = useChildState()
   if (childrens) {
     return (
@@ -75,7 +75,7 @@ const ChildLink = (link: {
   toggle?: () => void
 }) => {
   const { idx, title, href, toggle } = link
-  const css: CSSProperties = { animationDelay: `${(( idx - 1 ) * 200) - 300}ms`, paddingRight: '0.5rem' }
+  const css: CSSProperties = { animationDelay: `${(( idx - 1 ) * 200) - 300}ms` as string, paddingRight: '0.5rem' }
   return (
     <Link href={href || '/'}>
       <a className={s.childLink} onClick={toggle}>
