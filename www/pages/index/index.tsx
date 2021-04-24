@@ -4,7 +4,7 @@ import Hero from './hero'
 export type IndexProps = PageProps
 
 const Index = (data: IndexProps) => (
-  <Page {...data}>
+  <Page {...data} padded={false}>
     <Hero />
   </Page>
 )

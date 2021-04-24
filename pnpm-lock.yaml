@@ -22,6 +22,7 @@ specifiers:
   graphql: ^15.5.0
   graphql-request: ^3.4.0
   gulp: ^4.0.2
+  medium-zoom: ^1.0.6
   next: 10.1.3
   next-compose-plugins: ^2.2.1
   next-pwa: ^5.2.1
@@ -53,6 +54,7 @@ dependencies:
   globby: 11.0.3
   graphql: 15.5.0
   graphql-request: 3.4.0_graphql@15.5.0
+  medium-zoom: 1.0.6
   next: 10.1.3_5347ba9dae72bc17e95cc7756ff465f1
   next-pwa: 5.2.9_next@10.1.3
   next-themes: 0.0.10_25092bce6b11ca14c296c20dc6213128
@@ -6362,6 +6364,10 @@ packages:
   /mdn-data/2.0.4:
     resolution: {integrity: sha512-iV3XNKw06j5Q7mi6h+9vbx23Tv7JkjEVgKHW4pimwyDGWm0OIQntJJ+u1C6mg6mK1EaTv42XQ7w76yuzH7M2cA==}
     dev: true
+
+  /medium-zoom/1.0.6:
+    resolution: {integrity: sha512-UdiUWfvz9fZMg1pzf4dcuqA0W079o0mpqbTnOz5ip4VGYX96QjmbM+OgOU/0uOzAytxC0Ny4z+VcYQnhdifimg==}
+    dev: false
 
   /memory-fs/0.2.0:
     resolution: {integrity: sha1-8rslNovBIeORwlIN6Slpyu4KApA=}
