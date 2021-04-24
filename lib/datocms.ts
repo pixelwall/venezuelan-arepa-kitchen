@@ -10,6 +10,7 @@ export function request({ query, variables, preview }: {
     : `https://graphql.datocms.com/`
 
     const client = new GraphQLClient(endpoint, {
+      timeout: 10000,
       headers: {
         authorization: `Bearer ${process.env.DATOCMS_API_TOKEN}`,
       },
@@ -39,14 +40,22 @@ export async function getGlobalData({ preview = false }: { preview?: boolean } =
   }
 }
 
-export const responsiveImageHelper = ({ w, h, fit }: {
+export const responsiveImageHelper = (params?: {
   w?: number
   h?: number
+  q?: number
   fit?: string
 }) => {
+  const { w, h, q, fit } = params || {
+    w: null,
+    h: null,
+    q: null,
+    fit: null,
+  }
   return `responsiveImage(imgixParams: {
     ${w ? `w: ${w},` : ''}
     ${h ? `h: ${h},` : ''}
+    ${q ? `q: ${q},` : ''}
     ${fit ? `fit: ${fit},` : ''}
     auto: format
   }) {

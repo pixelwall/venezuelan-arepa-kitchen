@@ -17,6 +17,7 @@
 }
 
 .input {
+	border-radius: 0;
 	@apply p-2;
 	@apply border-b;
 	@apply border-x-gray-300;

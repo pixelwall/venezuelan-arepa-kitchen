@@ -39,7 +39,7 @@ export const SnipcartWrapper = () => (
 )
 
 const Snipcart = () => (
-  <div style={{ display: 'fixed', zIndex: 999 }}>
+  <div style={{ position: 'fixed', zIndex: 9999 }}>
     <SnipcartHead />
     <SnipcartWrapper />
   </div>

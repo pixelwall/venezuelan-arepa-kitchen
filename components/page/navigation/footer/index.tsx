@@ -77,9 +77,9 @@ const Information = () => {
   const phone = contactInfo?.phone
 
   return (
-    <div className="flex flex-col">
+    <div className={styles.el} style={{margin: '0'}}>
       <div className={styles['el-alt']}>
-        <p className={styles['title']}>Location</p>
+        <p className={styles['title']}>Direction</p>
         <p className={styles['paragraph']}>
           {direction}
         </p>
