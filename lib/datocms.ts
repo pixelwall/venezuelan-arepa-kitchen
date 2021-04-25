@@ -19,27 +19,6 @@ export function request({ query, variables, preview }: {
     return process.env.OFFLINE ? Promise.resolve({}) : client.request(query, variables)
 }
 
-const GLOBAL_DATA_QUERY = `
-query GlobalDataQuery {
-  globalInfo {
-    footerDescription
-    direction
-  }
-  contactInfo {
-    facebook
-    instagram
-    phone
-  }
-}
-`
-
-export async function getGlobalData({ preview = false }: { preview?: boolean } = {}): Promise<any> {
-  const req = await request({ query: GLOBAL_DATA_QUERY, preview })
-  return {
-    ...req
-  }
-}
-
 export const responsiveImageHelper = (params?: {
   w?: number
   h?: number
@@ -86,3 +65,32 @@ fragment responsiveImageFragment on ResponsiveImage {
   base64
 }
 `
+
+const GLOBAL_DATA_QUERY = `
+query GlobalDataQuery {
+  globalInfo {
+    footerDescription
+    direction
+  }
+  contactInfo {
+    facebook
+    instagram
+    phone
+  }
+  menuCategories: allMenuCategories {
+    name
+    slug
+    public
+    image {
+      ${responsiveImageHelper({ w: 500, h: 500, fit: 'crop' })}
+    }
+  }
+}
+`
+
+export async function getGlobalData({ preview = false }: { preview?: boolean } = {}): Promise<any> {
+  const req = await request({ query: GLOBAL_DATA_QUERY, preview })
+  return {
+    ...req
+  }
+}
