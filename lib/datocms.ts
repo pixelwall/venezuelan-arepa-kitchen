@@ -10,7 +10,6 @@ export function request({ query, variables, preview }: {
     : `https://graphql.datocms.com/`
 
     const client = new GraphQLClient(endpoint, {
-      timeout: 10000,
       headers: {
         authorization: `Bearer ${process.env.DATOCMS_API_TOKEN}`,
       },
