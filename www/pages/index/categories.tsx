@@ -3,17 +3,12 @@ import Viewport, { setAnim } from '@/components/viewport'
 import { ResponsiveImage } from '@/lib/models/cms'
 import Link from 'next/link'
 import { Image } from 'react-datocms'
-import { Fire32 } from '@carbon/icons-react'
-
-export interface AboutProps {
-  aboutTitle?: string
-  aboutDescription?: string
-  aboutImage?: ResponsiveImage
-}
+import { Fire32, Restaurant32 } from '@carbon/icons-react'
 
 type CategoryProps = {
   name?: string
   slug?: string
+  description?: string
   image?: ResponsiveImage
 }
 
@@ -21,6 +16,7 @@ const Category = ({
   name,
   slug,
   image,
+  description,
   reversed = true,
 }: CategoryProps & {
   reversed?: boolean
@@ -39,6 +35,12 @@ const Category = ({
       />
     </div>
     <div className="text-center w-full p-[32px] md:w-[50%]">
+      <Restaurant32
+        className="mx-auto mb-6 animate"
+        width={64}
+        height={64}
+        style={setAnim({ d: '200ms' })}
+      />
       <h3
         className="font-title text-center mb-6 animate t-h1"
         style={setAnim({ d: '200ms' })}
@@ -48,9 +50,8 @@ const Category = ({
       <div
         className="mb-6 animate"
         style={setAnim({ d: '400ms' })}
-      >
-        Laboris laboris nostrud et cillum pariatur id deserunt fugiat magna reprehenderit. Reprehenderit laborum quis est pariatur ipsum dolor consequat ut minim.
-      </div>
+        dangerouslySetInnerHTML={{__html: description}}
+      />
       <div
         className="animate"
         style={setAnim({ d: '600ms' })}
@@ -68,7 +69,7 @@ const Category = ({
 )
 
 const Categories = () => {
-  const categories: CategoryProps[] = useGlobalDataContext().menuCategories
+  const categories: CategoryProps[] = useGlobalDataContext().menuCategories?.filter((c) => c.public)
   return (
     <div className="flex flex-col py-24 c-lg">
       <Viewport

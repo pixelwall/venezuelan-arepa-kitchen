@@ -79,6 +79,7 @@ query GlobalDataQuery {
   menuCategories: allMenuCategories {
     name
     slug
+    description
     public
     image {
       ${responsiveImageHelper({ w: 500, h: 500, fit: 'crop' })}
