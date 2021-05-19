@@ -13,7 +13,7 @@ const AppointmentForm = ({ title }: { title?: boolean }) => {
     <div className="w-full lg:w-4/10 mx-auto mb-8 px-6">
       {title && (
         <V className="animate" oneWay style={setAnim({x: '-0.5rem'})}>
-          <h2 className="text-x-gray-800 t-h2 font-title lg:-ml-24 mb-6">Make an appointment</h2>
+          <h2 className="text-x-gray-800 t-h2 font-title lg:-ml-24 mb-6 font-title">Make a reservation</h2>
         </V>
       )}
       <p

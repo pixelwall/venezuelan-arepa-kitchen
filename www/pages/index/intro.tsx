@@ -38,7 +38,7 @@ const Intro = ({ introTitle, introDescription, introBg }: IntroProps) => (
   <Background image={introBg}>
     <div className="text-center text-white py-36 c">
       <Viewport className="flex flex-col space-y-6" oneWay style={setAnim({s: '1.1'})}>
-        <h2 className="font-title font-bold animate text-6xl">{introTitle}</h2>
+        <h2 className="animate text-6xl font-handwritten">{introTitle}</h2>
         <div
           className="mx-auto w-full animate lg:w-[70%]"
           style={setAnim({d: '100ms'})}
