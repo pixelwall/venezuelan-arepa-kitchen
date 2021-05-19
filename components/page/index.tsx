@@ -32,6 +32,7 @@ const Page = ({
   <globalDataContext.Provider value={globalData}>
     <GoogleFonts
       families={[
+        'Pattaya',
         'Titillium+Web:wght@300;400;700',
         'Lato:wght@300;400;700;900',
       ]}

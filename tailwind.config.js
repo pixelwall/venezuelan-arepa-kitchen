@@ -9,6 +9,10 @@ const sizing = () => {
 }
 
 const fontFamily = {
+  handwritten: [
+    'Pattaya',
+    ...defaultTheme.fontFamily.sans,
+  ],
   title: [
     'Titillium Web',
     ...defaultTheme.fontFamily.sans,

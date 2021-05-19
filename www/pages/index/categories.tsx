@@ -58,7 +58,7 @@ const Category = ({
       >
         <Link href={`/menu?category=${slug}`}>
           <a
-            className="rounded-full font-bold font-title border-2 border-x-gray-900 py-2 px-4 duration-200 items-center inline-flex hover:bg-x-gray-900 hover:text-white"
+            className="rounded-full font-bold font-title border-2 border-x-gray-900 py-2 px-4 duration-200 items-center inline-flex hover:text-white hover:bg-x-gray-900"
           >
             Taste our {name.toLowerCase()}
           </a>
