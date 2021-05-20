@@ -14,7 +14,7 @@ query HomepageQuery {
     aboutTitle
     aboutDescription
     aboutImage {
-      ${responsiveImageHelper({ w: 500, h: 500, fit: 'crop', q: 60 })}
+      ${responsiveImageHelper({ w: 500, h: 500, fit: 'crop' })}
     }
   }
 }
