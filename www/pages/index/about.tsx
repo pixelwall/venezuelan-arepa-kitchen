@@ -34,7 +34,7 @@ const About = ({
             style={setAnim({ d: '200ms' })}
           />
           <h2
-            className="font-title mb-6 animate t-h1 font-handwritten"
+            className="font-title mb-6 animate t-h1 font-handwritten flag-gradient"
             style={setAnim({ d: '200ms' })}
           >
             {aboutTitle}

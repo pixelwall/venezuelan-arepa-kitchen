@@ -5,17 +5,17 @@ import Forms from './forms.svg'
 
 const Hero = () => (
   <div className="relative">
-    <Viewport className="bottom-0 animate w-3/10 absolute sm:w-2/10 lg:w-1/10" style={setAnim({x: '-1rem', y: '1rem'})}>
+    <Viewport className="bottom-0 animate w-3/10 absolute sm:w-2/10 lg:w-1/10" style={setAnim({x: '-1rem', y: '1rem', d: '500ms'})}>
       <div className="mb-8 ml-8 w-full" style={{ transform: 'scaleX(-1)' }}>
         <Forms className="h-auto w-full" viewBox="0 0 640 640" />
       </div>
     </Viewport>
-    <div className="flex min-h-screen py-32 c">
+    <div className="flex min-h-screen py-40 c">
       <div className="flex flex-wrap-reverse my-auto w-full items-center sm:flex-wrap">
         <div className="w-full sm:w-1/2">
           <Viewport
-            className="bg-clip-text bg-gradient-to-br font-bold pr-2 font-handwritten from-yellow-300 via-blue-300 to-red-500 text-transparent animate text-4xl inline-block xl:text-6xl"
-            style={setAnim({ x: '-1rem' })}
+            className="font-bold pr-2 font-handwritten animate text-4xl xl:text-6xl flag-gradient"
+            style={setAnim({ x: '-1rem', d: '800ms' })}
           >
             Arepa
             <br />
@@ -24,17 +24,14 @@ const Hero = () => (
         </div>
         <Viewport
           className="flex mb-16 w-full animate justify-center sm:w-1/2 lg:mb-0 lg:justify-end relative"
-          style={setAnim({ x: '1rem', y: '1rem' })}
+          style={setAnim({ x: '1rem', y: '1rem', d: '200ms' })}
         >
-          <style jsx>{`
-            .polka {
-              background-image: radial-gradient(rgb(210, 210, 210) 20%, transparent 20%),
-                radial-gradient(rgb(210, 210, 210) 20%, transparent 20%);
-              background-position: 0 0, 7px 7px;
-              background-size: 14px 14px;
-          }
-          `}</style>
-          <div className="absolute w-7/10 lg:h-80 lg:w-80 rounded-[50%] -z-10 transform translate-x-5 translate-y-5 polka" />
+          <div
+            className="absolute w-7/10 h-full lg:h-80 lg:w-80 -z-10 animate" 
+            style={setAnim({ x: '-1.25rem', y: '-1.25rem', d: '0.2s' })}
+          >
+            <div className="w-full h-full polka transform rounded-[50%]  translate-x-5 translate-y-5"/>
+          </div>
           <div className="flex bg-blue-300 rounded-[50%] w-7/10 items-center justify-center lg:h-80 lg:w-80">
             <Parallax negative className="p-4">
               <Image

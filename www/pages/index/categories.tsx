@@ -87,7 +87,7 @@ const Categories = () => {
           className="font-title text-center mb-6 animate t-h1"
           style={setAnim({ d: '200ms' })}
         >
-          Taste our <span className="bg-gradient-to-r bg-clip-text from-[#fb923c] to-[#ea580c] font-handwritten px-[0.1rem] text-transparent">caribbean</span> menu
+          Taste our <span className="orange-gradient font-handwritten px-[0.1rem] text-transparent">caribbean</span> menu
         </h2>
       </Viewport>
       <div className="flex-col flex space-y-8 w-full">

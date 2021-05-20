@@ -28,6 +28,10 @@ const fontFamily = {
 }
 
 const colors = {
+  'orange': {
+    d: '#fb923c',
+    l: '#ea580c',
+  },
   'x-blue': {
     50: '#F2F8FE',
     100: '#E6F1FC',
