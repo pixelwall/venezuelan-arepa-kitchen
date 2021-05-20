@@ -12,7 +12,16 @@ const Index = (data: IndexProps) => (
     <Hero />
     <Intro {...data} />
     <Categories />
+
+    <div className="grid py-24 gap-9 grid-cols-1 c-lg sm:grid-cols-2 lg:grid-cols-4">
+      <div className="bg-gray-500 h-96 w-full"></div>
+      <div className="bg-gray-500 h-96 w-full"></div>
+      <div className="bg-gray-500 h-96 w-full"></div>
+      <div className="bg-gray-500 h-96 w-full"></div>
+    </div>
+
     <About {...data} />
+
 
     <div id="appointment" className="my-24 c-lg">
       <AppointmentForm title />

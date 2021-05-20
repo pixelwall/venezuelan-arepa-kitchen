@@ -1,4 +1,9 @@
+
 ports:
 - port: 3000
 tasks:
 - command: npm i -g pnpm && pnpm i
+
+vscode:
+  extensions:
+    - voorjaar.windicss-intellisense

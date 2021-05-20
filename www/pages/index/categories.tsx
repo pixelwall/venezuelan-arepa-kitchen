@@ -32,6 +32,7 @@ const Category = ({
           ...image.responsiveImage,
           alt: name,
         }}
+        pictureClassName="rounded-[50%]"
       />
     </div>
     <div className="text-center w-full p-[32px] md:w-[50%]">
