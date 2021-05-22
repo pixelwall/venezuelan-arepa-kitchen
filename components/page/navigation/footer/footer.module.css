@@ -31,7 +31,8 @@
 
 @screen lg {
 	.elements {
-		@apply mx-[-16px];
+		margin-left: -16px;
+		margin-right: -16px;
 		flex-direction: row;
 	}
 }

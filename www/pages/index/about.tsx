@@ -18,12 +18,20 @@ const About = ({
   <div className="py-24 c-lg">
     <Viewport className="flex flex-col-reverse m-[-32px] md:flex-row md:items-center" oneWay style={setAnim({ y: '0.5rem' })}>
       <div className="w-full p-[32px] animate md:w-[50%]">
+        <div className="relative">
+          <div
+            className="h-full w-full animate -z-10 absolute"
+            style={{ aspectRatio: '1/1', ...setAnim({ x: '-1.5rem', y: '-1.5rem', d: '0.2s' }) }}
+          >
+            <div className="h-full w-full transform translate-x-6 translate-y-6 polka" />
+          </div>
         <Image
           data={{
             ...aboutImage.responsiveImage,
             alt: 'We are tradition',
           }}
         />
+        </div>
       </div>
       <div className="w-full p-[32px] md:w-[50%]">
         <div className="text-center w-full">
@@ -34,7 +42,7 @@ const About = ({
             style={setAnim({ d: '200ms' })}
           />
           <h2
-            className="font-title mb-6 animate t-h1 font-handwritten flag-gradient"
+            className="font-title font-handwritten mb-6 animate flag-gradient t-h1"
             style={setAnim({ d: '200ms' })}
           >
             {aboutTitle}
@@ -50,7 +58,7 @@ const About = ({
           >
             <Link href="/about">
               <a
-                className="rounded-full font-bold font-title border-2 border-x-gray-900 py-2 px-4 duration-200 items-center inline-flex hover:bg-x-gray-900 hover:text-white"
+                className="rounded-full font-bold font-title border-2 border-x-gray-900 py-2 px-4 duration-200 items-center inline-flex hover:text-white hover:bg-x-gray-900"
               >
                 Learn more about us
               </a>

@@ -10,7 +10,7 @@
     "favicons": "gulp generateFavicons"
   },
   "dependencies": {
-    "@carbon/icons-react": "^10.29.0",
+    "@carbon/icons-react": "^10.32.0",
     "@types/node-fetch": "^2.5.10",
     "chrome-aws-lambda": "^8.0.0",
     "dompurify": "^2.2.6",

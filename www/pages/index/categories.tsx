@@ -26,21 +26,23 @@ const Category = ({
     oneWay
     style={setAnim({ y: '0.5rem' })}
   >
-    <div className="flex w-full p-[32px] animate relative md:w-[50%]">
+    <div className="flex w-full p-[32px] animate md:w-[50%]" style={setAnim({ d: '600ms' })}>
       <div className="flex w-full items-center justify-center">
-        <div
-          className="h-full w-full animate -z-10 absolute" 
-          style={{aspectRatio: '1/1', ...setAnim({ x: '-1.5rem', y: '-1.5rem', d: '0.2s' })}}
-        >
-          <div className="h-full w-full transform translate-x-6 translate-y-6 polka"/>
+        <div className="relative">
+          <div
+            className="h-full w-full animate -z-10 absolute"
+            style={{ aspectRatio: '1/1', ...setAnim({ x: '-1.5rem', y: '-1.5rem', d: '0.8s' }) }}
+          >
+            <div className="h-full rounded-[50%] w-full transform translate-x-6 translate-y-6 polka" />
+          </div>
+          <Image
+            data={{
+              ...image.responsiveImage,
+              alt: name,
+            }}
+            className="rounded-[50%] overflow-hidden"
+          />
         </div>
-        <Image
-          data={{
-            ...image.responsiveImage,
-            alt: name,
-          }}
-          className="rounded-[50%] overflow-hidden"
-        />
       </div>
     </div>
     <div className="text-center w-full p-[32px] md:w-[50%]">
@@ -59,7 +61,7 @@ const Category = ({
       <div
         className="mb-6 animate"
         style={setAnim({ d: '400ms' })}
-        dangerouslySetInnerHTML={{__html: description}}
+        dangerouslySetInnerHTML={{ __html: description }}
       />
       <div
         className="animate"

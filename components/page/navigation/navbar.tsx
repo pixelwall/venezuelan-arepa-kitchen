@@ -62,14 +62,15 @@ export default function Navbar() {
         <div className={`${s.headerWrapper} border-b duration-200 ${scrollY > 0 ? 'border-x-gray-200' : 'border-transparent'}`}>
           <div className="flex overflow-hidden pointer-events-auto">
             <Link href="/">
-              <a title="Home" className="font-bold font-title transform text-2xl text-blue-800 duration-200 overflow-hidden hover:scale-95">
-                <div className="transform duration-200 logo hover:scale-95">
+              <a title="Home" className="font-bold font-title my-auto transform text-2xl text-blue-800 duration-200 overflow-hidden hover:scale-95">
+                <div className="flex h-full logo justify-center items-center">
                   <Image
                     src="/images/logo-alt.png"
                     alt="Home"
                     title="Home"
-                    width={113}
-                    height={70}
+                    objectFit="contain"
+                    width={90}
+                    height={90}
                     quality={90}
                   />
                 </div>
@@ -90,7 +91,7 @@ export default function Navbar() {
             </div>
             <Link href="/menu">
               <a
-                className="bg-transparent rounded-full font-bold font-title border-x-gray-800 border-2 text-sm mb-[2px] py-2 px-4 text-x-gray-800 duration-200 lg:text-base hover:bg-x-gray-800 hover:text-white"
+                className="bg-transparent rounded-full font-bold font-title border-x-gray-800 border-2 text-sm mb-[2px] py-2 px-4 text-x-gray-800 duration-200 lg:text-base hover:text-white hover:bg-x-gray-800"
               >Order now</a>
             </Link>
             <button
