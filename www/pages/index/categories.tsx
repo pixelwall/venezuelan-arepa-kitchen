@@ -26,14 +26,22 @@ const Category = ({
     oneWay
     style={setAnim({ y: '0.5rem' })}
   >
-    <div className="w-full p-[32px] animate md:w-[50%]">
-      <Image
-        data={{
-          ...image.responsiveImage,
-          alt: name,
-        }}
-        pictureClassName="rounded-[50%]"
-      />
+    <div className="flex w-full p-[32px] animate relative md:w-[50%]">
+      <div className="flex w-full items-center justify-center">
+        <div
+          className="h-full w-full animate -z-10 absolute" 
+          style={{aspectRatio: '1/1', ...setAnim({ x: '-1.5rem', y: '-1.5rem', d: '0.2s' })}}
+        >
+          <div className="h-full w-full transform translate-x-6 translate-y-6 polka"/>
+        </div>
+        <Image
+          data={{
+            ...image.responsiveImage,
+            alt: name,
+          }}
+          className="rounded-[50%] overflow-hidden"
+        />
+      </div>
     </div>
     <div className="text-center w-full p-[32px] md:w-[50%]">
       <Restaurant32
@@ -43,7 +51,7 @@ const Category = ({
         style={setAnim({ d: '200ms' })}
       />
       <h3
-        className="font-title text-center mb-6 animate t-h1 font-handwritten"
+        className="font-title font-handwritten text-center mb-6 animate t-h1"
         style={setAnim({ d: '200ms' })}
       >
         {name}
@@ -88,7 +96,7 @@ const Categories = () => {
           className="font-title text-center mb-6 animate t-h1"
           style={setAnim({ d: '200ms' })}
         >
-          Taste our <span className="orange-gradient font-handwritten px-[0.1rem] text-transparent">caribbean</span> menu
+          Taste our <span className="font-handwritten text-transparent px-[0.1rem] orange-gradient">caribbean</span> menu
         </h2>
       </Viewport>
       <div className="flex-col flex space-y-8 w-full">
