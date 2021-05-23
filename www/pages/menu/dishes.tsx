@@ -72,7 +72,7 @@ const Dishes = (data: DisheshProps) => {
     }
 
     if (searchInput) {
-      newData = search(newData, searchInput, ['name'])
+      newData = search(newData, searchInput, ['title'])
     }
     return newData
   }, [category, searchInput])

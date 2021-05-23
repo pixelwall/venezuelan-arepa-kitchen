@@ -16,7 +16,7 @@ const Index = (data: IndexProps) => (
     <Dishes {...data} />
     <About {...data} />
 
-    <div id="appointment" className="my-24 c-lg">
+    <div id="reservation" className="my-24">
       <AppointmentForm title />
     </div>
   </Page>
