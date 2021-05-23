@@ -8,12 +8,14 @@ import nav from '@/lib/navigation'
 import { useGlobalDataContext } from '@/components/page'
 import { ShoppingCart24 } from '@carbon/icons-react'
 import Image from 'next/image'
+import { useSnipcartContext } from '@/components/snipcart'
 
 export default function Navbar() {
   const [sidebar, setSidebar] = useState(false)
   const [scrollY, setScrollY] = useState<number>(null)
   const toggleSidebar = () => (setSidebar(!sidebar))
   const globalData = useGlobalDataContext()
+  const { cartQty } = useSnipcartContext()
 
   const scrollHander = () => {
     setScrollY(window.scrollY)
@@ -54,7 +56,7 @@ export default function Navbar() {
       <div className={`bg-white border-t border-l duration-500 rounded-tl-lg border-x-gray-200 p-4 transform-gpu right-0 bottom-0 z-10 fixed sm:hidden ${(!sidebar && !isShowing) && 'translate-y-full pointer-events-none'}`}>
         <button className="flex text-x-gray-300 duration-200 items-center snipcart-checkout hover:text-x-gray-800">
           <ShoppingCart24 />
-          <span className="font-bold font-title text-sm ml-2 text-x-gray-800 snipcart-items-count"/>
+          <span className="font-bold font-title text-sm ml-2 text-x-gray-800">{cartQty}</span>
         </button>
       </div>
       <header className={`${s.header} duration-500 transform-gpu ${(!sidebar && !isShowing) && '-translate-y-full pointer-events-none'}`}>
@@ -98,7 +100,7 @@ export default function Navbar() {
               className="ml-6 text-x-gray-300 duration-200 items-center hidden snipcart-checkout sm:flex hover:text-x-gray-800"
             >
               <ShoppingCart24 />
-              <span className="font-bold font-title text-sm ml-2 text-x-gray-800 snipcart-items-count" />
+              <span className="font-bold font-title text-sm ml-2 text-x-gray-800">{cartQty}</span>
             </button>
             <div className="ml-6 lg:hidden">
               <Hamburger open={sidebar} toggle={toggleSidebar} />

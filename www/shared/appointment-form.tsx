@@ -10,20 +10,20 @@ const AppointmentForm = ({ title }: { title?: boolean }) => {
     message: '',
   })
   return (
-    <div className="w-full lg:w-4/10 mx-auto mb-8 px-6">
+    <div className="mx-auto mb-8 w-full px-4 lg:w-4/10">
       {title && (
         <V className="animate" oneWay style={setAnim({x: '-0.5rem'})}>
-          <h2 className="text-x-gray-800 t-h2 font-title lg:-ml-24 mb-6 font-title">Make a reservation</h2>
+          <h2 className="font-title mb-6 text-x-gray-800 t-h2 lg:-ml-24">Make a reservation</h2>
         </V>
       )}
       <p
-        className="mb-4 font-bold text-white font-title"
+        className="font-bold font-title text-white mb-4"
       >
         Complete name
       </p>
-      <V className="w-full mb-6 animate" oneWay>
+      <V className="mb-6 w-full animate" oneWay>
         <input
-          className="w-full px-0 input font-title"
+          className="font-title w-full px-0 input"
           style={{ paddingLeft: '0', paddingRight: '0' }}
           placeholder="Ex: Maria Gabriela"
           value={form.name}
@@ -35,13 +35,13 @@ const AppointmentForm = ({ title }: { title?: boolean }) => {
       </V>
 
       <p
-        className="mb-4 font-bold text-white font-title"
+        className="font-bold font-title text-white mb-4"
       >
         Email
       </p>
-      <V className="w-full mb-6 animate" oneWay>
+      <V className="mb-6 w-full animate" oneWay>
         <input
-          className="w-full px-0 input font-title"
+          className="font-title w-full px-0 input"
           style={{ paddingLeft: '0', paddingRight: '0' }}
           placeholder="Ex: mariagabriela@gmail.com"
           value={form.email}
@@ -53,13 +53,13 @@ const AppointmentForm = ({ title }: { title?: boolean }) => {
       </V>
 
       <p
-        className="mb-4 font-bold text-white font-title"
+        className="font-bold font-title text-white mb-4"
       >
         Subject
       </p>
-      <V className="w-full mb-6 animate" oneWay>
+      <V className="mb-6 w-full animate" oneWay>
         <input
-          className="w-full px-0 input font-title"
+          className="font-title w-full px-0 input"
           style={{ paddingLeft: '0', paddingRight: '0' }}
           placeholder="Ex: Cost"
           value={form.subject}
@@ -71,13 +71,13 @@ const AppointmentForm = ({ title }: { title?: boolean }) => {
       </V>
 
       <p
-        className="mb-4 font-bold text-white font-title"
+        className="font-bold font-title text-white mb-4"
       >
         Message
       </p>
-      <V className="w-full mb-6 animate" oneWay>
+      <V className="mb-6 w-full animate" oneWay>
         <textarea
-          className="w-full px-0 input font-title"
+          className="font-title w-full px-0 input"
           style={{ paddingLeft: '0', paddingRight: '0' }}
           placeholder="Write a message..."
           value={form.message}
@@ -90,7 +90,7 @@ const AppointmentForm = ({ title }: { title?: boolean }) => {
       </V>
 
       <button
-        className="flex items-center justify-center w-full py-2 mt-4 duration-200 bg-x-gray-800 hover:bg-x-gray-700 text-white font-title"
+        className="flex font-title bg-x-gray-800 mt-4 text-white w-full py-2 duration-200 items-center justify-center hover:bg-x-gray-700"
       >
         Send message <ChevronRight16 className="ml-3" />
       </button>

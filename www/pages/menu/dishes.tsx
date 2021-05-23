@@ -78,7 +78,7 @@ const Dishes = (data: DisheshProps) => {
   }, [category, searchInput])
   return (
     <div className="c-lg">
-      <V className="mb-6 w-full animate">
+      <V className="mb-6 w-full animate" once>
         <p className="font-title mb-6 t-h2">Search filters</p>
         <input
           className="font-title w-full px-0 input"

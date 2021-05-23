@@ -10,6 +10,7 @@ query MenuQuery {
     heroBg {
       ${responsiveImageHelper({ w: 700, q: 60 })}
     }
+    text
   }
   menu: allMenus {
     ${productCardFields}
