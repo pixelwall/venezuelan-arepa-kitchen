@@ -10,7 +10,7 @@ const AppointmentForm = ({ title }: { title?: boolean }) => {
     message: '',
   })
   return (
-    <div className="mx-auto mb-8 w-full px-4 lg:w-4/10">
+    <div className="mx-auto mb-8 w-full px-6 lg:w-4/10">
       {title && (
         <V className="animate" oneWay style={setAnim({x: '-0.5rem'})}>
           <h2 className="font-title mb-6 text-x-gray-800 t-h2 lg:-ml-24">Make a reservation</h2>
