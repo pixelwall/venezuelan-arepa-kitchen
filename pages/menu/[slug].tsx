@@ -1,7 +1,7 @@
-import Page, { PageProps } from '@/components/page'
 import { getGlobalData, request, responsiveImageHelper } from '@/lib/datocms'
 import { Product, productDetailedFields } from '@/lib/models/product'
 import { GetStaticPaths } from 'next'
+export { default } from '@/www/pages/menu/[slug]'
 
 const query = `
 query MenuSlugQuery($slug: String) {
@@ -48,14 +48,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
     })),
     fallback: false,
   }
-}
-
-export default function MenuItem(data: PageProps) {
-  return (
-    <Page {...data}>
-      <div className="c-lg">
-        <h1>Works!</h1>
-      </div>
-    </Page>
-  )
 }
