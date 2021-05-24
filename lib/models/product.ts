@@ -18,6 +18,15 @@ export const productCardFields = `
   }
 `
 
+export const productDetailedFields = `
+  ${productBaseFields}
+  description
+  ingredients
+  images {
+      ${responsiveImageHelper({ w: 480, h: 300, fit: 'crop' })}
+  }
+`
+
 export interface Product {
   title?: string
   slug?: string
@@ -29,4 +38,5 @@ export interface Product {
   images?: ResponsiveImage[]
   price: number
   description?: string
+  ingredients?: string
 }

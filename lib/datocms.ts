@@ -1,6 +1,6 @@
 import { GraphQLClient } from 'graphql-request'
 
-export function request({ query, variables, preview }: {
+export async function request({ query, variables, preview }: {
   query: string
   variables?: any
   preview?: boolean
@@ -15,7 +15,7 @@ export function request({ query, variables, preview }: {
       },
     })
 
-    return process.env.OFFLINE ? Promise.resolve({}) : client.request(query, variables)
+    return process.env.OFFLINE ? {} : client.request(query, variables)
 }
 
 export const responsiveImageHelper = (params?: {
