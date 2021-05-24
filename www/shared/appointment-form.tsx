@@ -13,11 +13,11 @@ const AppointmentForm = ({ title }: { title?: boolean }) => {
     <div className="mx-auto mb-8 w-full px-6 lg:w-4/10">
       {title && (
         <V className="animate" oneWay style={setAnim({x: '-0.5rem'})}>
-          <h2 className="font-title mb-6 text-x-gray-800 t-h2 lg:-ml-24">Make a reservation</h2>
+          <h2 className="font-title mb-12 text-x-gray-800 t-h2 lg:-ml-24">Make a reservation</h2>
         </V>
       )}
       <p
-        className="font-bold font-title text-white mb-4"
+        className="font-bold font-title mb-4"
       >
         Complete name
       </p>
@@ -35,7 +35,7 @@ const AppointmentForm = ({ title }: { title?: boolean }) => {
       </V>
 
       <p
-        className="font-bold font-title text-white mb-4"
+        className="font-bold font-title mb-4"
       >
         Email
       </p>
@@ -53,7 +53,7 @@ const AppointmentForm = ({ title }: { title?: boolean }) => {
       </V>
 
       <p
-        className="font-bold font-title text-white mb-4"
+        className="font-bold font-title mb-4"
       >
         Subject
       </p>
@@ -71,7 +71,7 @@ const AppointmentForm = ({ title }: { title?: boolean }) => {
       </V>
 
       <p
-        className="font-bold font-title text-white mb-4"
+        className="font-bold font-title mb-4"
       >
         Message
       </p>

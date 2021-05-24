@@ -98,11 +98,13 @@ const Dishes = (data: DisheshProps) => {
           <MenuContainer menu={filteredData} />
         </div>
       ) : (
-        <div
-          className="font-handwritten text-center mb-8 w-full py-16 orange-gradient t-h1"
+        <V
+          className="font-handwritten text-center mb-8 w-full py-16 animate orange-gradient t-h1"
+          style={setAnim({ y: '0.5rem' })}
+          once
         >
           Oops, nothing here :(
-        </div>
+        </V>
       )}
     </div>
   )

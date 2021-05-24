@@ -25,6 +25,9 @@ export const productDetailedFields = `
   images {
       ${responsiveImageHelper({ w: 480, h: 300, fit: 'crop' })}
   }
+  imagesHd: images {
+      ${responsiveImageHelper()}
+  }
 `
 
 export interface Product {
@@ -36,6 +39,7 @@ export interface Product {
   }
   thumbnails?: ResponsiveImage[]
   images?: ResponsiveImage[]
+  imagesHd?: ResponsiveImage[]
   price: number
   description?: string
   ingredients?: string
