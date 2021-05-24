@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 type QuantityProps = {
   value: number
-  onChange: (number) => number
+  onChange: (number) => void
 }
 
 const Quantity: React.FC<QuantityProps> = ({ value, onChange }) => (
