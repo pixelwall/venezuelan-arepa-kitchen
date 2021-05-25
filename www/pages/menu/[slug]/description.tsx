@@ -1,40 +1,40 @@
 import { setAnim } from '@/components/viewport'
 import { ResponsiveImage } from '@/lib/models/cms'
 import { Product } from '@/lib/models/product'
-import { Add16 } from '@carbon/icons-react'
+import { Add16, Subtract16, Wheat24 } from '@carbon/icons-react'
 import { useState } from 'react'
 import Link from 'next/link'
 
 type QuantityProps = {
   value: number
-  onChange: (number) => number
+  onChange: (number) => void
 }
 
 const Quantity: React.FC<QuantityProps> = ({ value, onChange }) => (
-  <div
-    className="rounded-full inline-flex font-bold font-title border-2 border-x-gray-900 text-center w-full justify-between items-center overflow-hidden"
-  >
-    <button className="flex border-r rounded-none h-full border-x-gray-900 hover:text-white hover:bg-x-gray-900 duration-200">
-      <div className="py-2 px-4">
-        <Add16 />
-      </div>
+  <div className="-space-x-px rounded-md font-title w-full z-0 relative inline-flex">
+    <button
+      className="rounded-l-full font-medium border-l-2 border-t-2 border-b-2 border-x-gray-800 text-sm py-2 px-4 duration-200 hover:text-white relative inline-flex items-center focus:outline-none hover:bg-x-gray-800"
+      onClick={() => onChange((v: number) => v = Math.max(1, v - 1))}
+    >
+      <Subtract16 />
     </button>
-    <span className="py-2">
+    <div className="flex-grow font-bold border-t-2 border-b-2 border-x-gray-800 text-center py-2 px-4 z-10">
       {value}
-    </span>
-    <button className="flex flex-col border-l rounded-none h-full border-x-gray-900 hover:text-white hover:bg-x-gray-900 duration-200">
-      <div className="py-2 px-4">
-        <Add16 />
-      </div>
+    </div>
+    <button
+      className="rounded-r-full font-medium border-r-2 border-t-2 border-b-2 border-x-gray-800 text-sm py-2 px-4 duration-200 focus:outline-none hover:text-white relative inline-flex items-center hover:bg-x-gray-800"
+      onClick={() => onChange((v: number) => v = Math.min(10, v + 1))}
+    >
+      <Add16 />
     </button>
   </div>
 )
 
 const Description = (menu: Product) => {
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(1)
   return (
     <>
-      <h3 className="font-handwritten font-bold mb-6 text-5xl orange-gradient">{menu.title}</h3>
+      <h1 className="font-handwritten font-bold mb-6 text-5xl orange-gradient">{menu.title}</h1>
       <div className="mb-2 relative">
         <div
           className="h-full w-full animate -z-10 absolute"
@@ -53,13 +53,24 @@ const Description = (menu: Product) => {
           </p>
         </div>
       </div>
-      <div className="flex mt-12 w-full animate" style={setAnim({ d: '100ms' })}>
+      {menu.ingredients && (
+        <div className="rounded flex font-title bg-red-100 mt-12 text-left text-sm p-2 items-center">
+          <div className="rounded mx-auto bg-red-50 mr-2 p-2">
+            <Wheat24 />
+          </div>
+          <p>
+            <span className="font-bold">Attention:</span> for allergens, including cereals containing gluten, see ingredients <a href="#ingredients" className="font-bold hover:underline">below</a>.
+          </p>
+        </div>
+      )}
+      <div className="flex mt-12 text-xs w-full animate sm:text-base" style={setAnim({ d: '100ms' })}>
         <div className="pr-1 w-1/2">
           <Quantity value={quantity} onChange={setQuantity} />
         </div>
         <div className="pl-1 w-1/2">
           <button
             className="rounded-full flex font-bold font-title border-2 border-x-gray-900 text-center w-full py-2 px-4 duration-200 snipcart-add-item justify-center items-center hover:text-white hover:bg-x-gray-900"
+            data-item-quantity={quantity}
             data-item-id={menu.slug}
             data-item-price={menu.price}
             data-item-url={`/menu/${menu.slug}`}

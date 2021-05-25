@@ -31,6 +31,29 @@ const MenuSlug: React.FC<MenuSlugProps> = (data) => {
             <Description {...menu} />
           </div>
         </div>
+        <div className="flex flex-wrap w-full pt-12 pb-24 lg:-mx-6">
+          <div className="w-full lg:px-6 lg:w-2/3">
+            <h2 className="font-handwritten font-bold mb-6 t-h2">Description</h2>
+            <div dangerouslySetInnerHTML={{ __html: menu.description }} />
+          </div>
+          <div className="mt-12 w-full lg:mt-0 lg:px-6 lg:w-1/3" id="ingredients">
+            {menu.ingredients && (
+              <>
+                <h2 className="font-handwritten font-bold mb-6 t-h2">Ingredients</h2>
+                <style>{`
+                ul, ol {
+                  padding-left: 1.25rem;
+                }
+                li {
+                  padding-left: 1rem;
+                  list-style-type: circle;
+                }
+                `}</style>
+                <div dangerouslySetInnerHTML={{ __html: menu.ingredients }} />
+              </>
+            )}
+          </div>
+        </div>
       </div>
     </Page>
   )
