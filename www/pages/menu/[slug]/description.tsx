@@ -1,7 +1,6 @@
 import { setAnim } from '@/components/viewport'
-import { ResponsiveImage } from '@/lib/models/cms'
 import { Product } from '@/lib/models/product'
-import { Add16, Subtract16, Wheat24 } from '@carbon/icons-react'
+import { Add16, Subtract16, Wheat24, ShoppingCart16 } from '@carbon/icons-react'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -78,8 +77,8 @@ const Description = (menu: Product) => {
             data-item-image={menu.images[0].responsiveImage.src}
             data-item-name={menu.title}
           >
-            Add to cart
-            <Add16 className="ml-3" />
+            To cart
+            <ShoppingCart16 className="ml-3" />
           </button>
         </div>
       </div>

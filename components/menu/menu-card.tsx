@@ -2,7 +2,7 @@ import { Product } from '@/lib/models/product'
 import Viewport, { setAnim } from '@/components/viewport'
 import { Image } from 'react-datocms'
 import Link from 'next/link'
-import { View16, Add16 } from '@carbon/icons-react'
+import { View16, ShoppingCart16 } from '@carbon/icons-react'
 
 export const MenuCard = (menu: Product) => (
   <Viewport oneWay>
@@ -50,8 +50,8 @@ export const MenuCard = (menu: Product) => (
             data-item-image={menu.images[0].responsiveImage.src}
             data-item-name={menu.title}
           >
-            Add to cart
-            <Add16 />
+            To cart
+            <ShoppingCart16 />
           </button>
         </div>
         <div className="pl-1 w-1/2">
