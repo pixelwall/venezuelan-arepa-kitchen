@@ -26,6 +26,7 @@ export const getStaticProps = async (): Promise<GetStaticPropsResult<IndexProps>
       ...menuPage,
       menu,
       globalData,
-    }
+    },
+    revalidate: 1,
   }
 }

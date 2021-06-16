@@ -28,7 +28,8 @@ export const getStaticProps = async ({ params }: any) => {
       ...menuPage,
       menu,
       globalData,
-    }
+    },
+    revalidate: 1,
   }
 }
 
@@ -46,6 +47,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths: allMenus.map(({ slug }: Product) => ({
       params: { slug },
     })),
-    fallback: false,
+    fallback: 'blocking',
   }
 }
