@@ -27,6 +27,7 @@
     "preact-compat": "^3.19.0",
     "puppeteer-core": "^8.0.0",
     "react": "17.0.1",
+    "react-async-script-loader": "^0.3.0",
     "react-datocms": "^1.5.5",
     "react-dom": "17.0.1",
     "request": "^2.88.2",
