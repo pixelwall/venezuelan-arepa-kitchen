@@ -1,4 +1,4 @@
-import Page, { PageProps } from '@/components/page'
+import Page, { GetLayoutProps, PageProps } from '@/components/page'
 import AppointmentForm from '@/www/shared/appointment-form'
 import Hero from './hero'
 import Intro, { IntroProps } from './intro'
@@ -8,8 +8,12 @@ import Dishes, { DisheshProps } from './dishes'
 
 export type IndexProps = PageProps & IntroProps & AboutProps & DisheshProps
 
+const getLayoutProps: GetLayoutProps = () => ({
+  padded: false,
+})
+
 const Index = (data: IndexProps) => (
-  <Page {...data} padded={false}>
+  <>
     <Hero />
     <Intro {...data} />
     <Categories />
@@ -19,7 +23,9 @@ const Index = (data: IndexProps) => (
     <div id="reservation" className="my-24">
       <AppointmentForm title />
     </div>
-  </Page>
+  </>
 )
+
+Index.getLayoutProps = getLayoutProps
 
 export default Index

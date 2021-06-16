@@ -29,12 +29,12 @@ const ParentLink = (link: {
     return (
       <div className={s.sidebarLink} onClick={() => setChildMenu(link)}>
         <p
-          className="flex items-center text-right cursor-pointer"
+          className="cursor-pointer flex text-right items-center"
           style={css}
         >
           {title}
           <span
-            className="mt-1 ml-2 cursor-pointer i jam:chevron-right"
+            className="cursor-pointer mt-1 ml-2 i jam:chevron-right"
           />
         </p>
       </div>
@@ -94,7 +94,7 @@ const Childs = ({ toggle }: { toggle?: () => void }) => {
         onClick={() => setChildMenu(null)}
       >
         <span className="i jam:chevron-left"/>
-        Atrás
+        Back
       </button>
       <p className={s.childTitle}>{childMenu.title}</p>
       <div className={s.childMenuWrapper}>

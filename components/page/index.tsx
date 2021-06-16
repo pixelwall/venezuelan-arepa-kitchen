@@ -2,8 +2,9 @@ import { ReactNode, useContext, createContext } from 'react'
 import { Navbar, Footer } from './navigation'
 import OgImage, { OgImageProps } from './og-image'
 import SeoTags, { SeoTagsProps } from './seo-tags'
-import { GoogleFonts } from '@/components/google-fonts'
 import Favicons from './favicons'
+
+export type GetLayoutProps<T = any> = (props: T) => PageProps
 
 export interface PageProps extends OgImageProps, SeoTagsProps {
   padded?: boolean
@@ -30,15 +31,6 @@ const Page = ({
   ...rest
 }: PageProps) => (
   <globalDataContext.Provider value={globalData}>
-    <GoogleFonts
-      families={[
-        'Pattaya',
-        'Titillium+Web:wght@300;400;700',
-        'Lato:wght@300;400;700;900',
-      ]}
-      display="swap"
-    />
-
     <SeoTags
       title={title}
       brandTitle={brandTitle || brand}

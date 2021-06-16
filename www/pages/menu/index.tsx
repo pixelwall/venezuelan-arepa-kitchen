@@ -1,14 +1,20 @@
-import Page, { PageProps } from '@/components/page'
+import Page, { PageProps, GetLayoutProps } from '@/components/page'
 import Hero, { HeroProps } from './hero'
 import Dishes, { DisheshProps } from './dishes'
 
-export type IndexProps = PageProps & HeroProps & DisheshProps
+export type IndexProps = HeroProps & DisheshProps
+
+const getLayoutProps: GetLayoutProps = () => ({
+  title: 'Menu',
+})
 
 const Index = (data: IndexProps) => (
-  <Page {...data}>
+  <>
     <Hero {...data} />
     <Dishes {...data} />
-  </Page>
+  </>
 )
+
+Index.getLayoutProps = getLayoutProps
 
 export default Index
