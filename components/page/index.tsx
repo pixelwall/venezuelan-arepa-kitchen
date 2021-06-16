@@ -3,6 +3,8 @@ import { Navbar, Footer } from './navigation'
 import OgImage, { OgImageProps } from './og-image'
 import SeoTags, { SeoTagsProps } from './seo-tags'
 import Favicons from './favicons'
+import { motion } from 'framer-motion'
+import { useRouter } from 'next/router'
 
 export type GetLayoutProps<T = any> = (props: T) => PageProps
 
@@ -29,33 +31,45 @@ const Page = ({
   children,
   globalData,
   ...rest
-}: PageProps) => (
-  <globalDataContext.Provider value={globalData}>
-    <SeoTags
-      title={title}
-      brandTitle={brandTitle || brand}
-      description={description || (globalData?.SEODescription || brand)}
-    />
+}: PageProps) => {
+  const router = useRouter()
+  return (
+    <globalDataContext.Provider value={globalData}>
+      <SeoTags
+        title={title}
+        brandTitle={brandTitle || brand}
+        description={description || (globalData?.SEODescription || brand)}
+      />
 
-    <OgImage {...rest} />
+      <OgImage {...rest} />
 
-    <Favicons />
+      <Favicons />
 
-    <style global jsx>
-      {` html { scroll-behavior: smooth; }`}
-    </style>
+      <style global jsx>
+        {` html { scroll-behavior: smooth; }`}
+      </style>
 
-    <div className="flex flex-col min-h-screen w-full">
-      {navbar && <Navbar />}
-      <main
-        className="flex-grow w-full overflow-hidden"
-        style={{ paddingTop: `${padded ? 96 : 0}px` }}
-      >
-        {children}
-      </main>
-      {footer && <Footer />}
-    </div>
-  </globalDataContext.Provider>
-)
+      <div className="flex flex-col min-h-screen w-full">
+        {navbar && <Navbar />}
+        <motion.main
+          animate="enter"
+          exit="exit"
+          initial="initial"
+          key={router.route}
+          style={{ paddingTop: `${padded ? 96 : 0}px` }}
+          className="flex-grow w-full overflow-hidden"
+          variants={{
+            initial: { opacity: 0, x: 40 },
+            enter: { opacity: 1, x: 0 },
+            exit: { opacity: 0, x: -40 },
+          }}
+        >
+          {children}
+        </motion.main>
+        {footer && <Footer />}
+      </div>
+    </globalDataContext.Provider>
+  )
+}
 
 export default Page
