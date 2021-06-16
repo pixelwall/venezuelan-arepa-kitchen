@@ -59,9 +59,9 @@ const Page = ({
           style={{ paddingTop: `${padded ? 96 : 0}px` }}
           className="flex-grow w-full overflow-hidden"
           variants={{
-            initial: { opacity: 0, x: 40 },
-            enter: { opacity: 1, x: 0 },
-            exit: { opacity: 0, x: -40 },
+            initial: { opacity: 0 },
+            enter: { opacity: 1 },
+            exit: { opacity: 0 },
           }}
         >
           {children}
